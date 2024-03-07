@@ -1,8 +1,15 @@
 import Layout from "@/components/layouts/privateLayout";
+import { Button } from "@/shared/button";
+import { Input } from "@/shared/input";
+
 import type { ReactElement } from "react";
 
 const Home = () => {
-  return <></>;
+  return (
+    <>
+      <Input />
+    </>
+  );
 };
 
 Home.getLayout = function getLayout(page: ReactElement) {
