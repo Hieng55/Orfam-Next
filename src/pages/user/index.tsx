@@ -8,11 +8,21 @@ import DashboardUser from "./dashboard";
 
 import { TMyProfile } from "@/components/features/checkout/type";
 import Loading from "@/components/features/loading";
+import Head from "next/head";
 
 const User = ({ children }: { children: React.ReactNode }) => {
   const { profile, isLoading } = useProfile<TMyProfile>();
+
   return (
     <>
+      <Head>
+        <title>Welcome {profile?.data.name} - Orfarm</title>
+        <meta
+          property="og:description"
+          content="Explore our store to find the freshest and most diverse vegetable products. We are committed to providing the best quality for your dining table!"
+        />
+      </Head>
+
       {<Loading isLoading={isLoading} />}
       <div className="flex gap-3 mt-20 pt-20 px-4 pb-16 sm:flex-wrap ">
         <ToastContainer />

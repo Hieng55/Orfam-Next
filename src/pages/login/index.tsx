@@ -22,6 +22,7 @@ import authLocal from "@/utils/localStorage";
 
 import logo from "@/image/logo/Logo.png";
 import { LoginData } from "@/services/type";
+import Head from "next/head";
 
 const loginSchema = z.object({
   email: z.string().email("Invalid email format").trim(),
@@ -61,59 +62,69 @@ const Login = () => {
   const formFields = [{ name: "email", placeholder: "Email" } as const, { name: "password", placeholder: "Password", type: "password" } as const];
 
   return (
-    <div className="login w-full h-screen flex justify-center items-center bg-slate-200 p-5 xs:pt-4 xs:pb-4">
-      <Loading isLoading={isMutating} />
-      <div className="form-Login flex justify-center items-center w-96 shadow-shadow1 bg-white rounded-lg p-6 sm:w-11/12 xs:w-full">
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
-            <div className="head-form mt-">
-              <Image src={logo} alt="logo" className="m-auto" />
-              <h3 className="text-center text-blue-ct6 font-bold text-4xl mb-2 mt-4 sm:text-3xl xs:text-2xl">Login</h3>
-            </div>
-            {formFields.map(({ name, placeholder, type }) => (
-              <FormField
-                key={name}
-                control={form.control}
-                name={name}
-                render={({ field }) => (
-                  <FormItem>
-                    <InputForm
-                      types="success"
-                      fullWidth
-                      className="rounded-3xl bg-slate-100 border-0 mt-6 text-sm xs:text-xs"
-                      placeholder={placeholder}
-                      type={type || "text"}
-                      {...field}
-                    />
-                    {(errors && name === "email") || (errors && name === "password") ? (
-                      <FormMessage className="xs:text-xs">{errors}</FormMessage>
-                    ) : (
-                      <FormMessage className="xs:text-xs" />
-                    )}
-                  </FormItem>
-                )}
-              />
-            ))}
+    <>
+      <Head>
+        <title>Login - Orfarm</title>
+        <meta
+          property="og:description"
+          content="Explore our store to find the freshest and most diverse vegetable products. We are committed to providing the best quality for your dining table!"
+        />
+      </Head>
 
-            <div className="checkbox flex items-center justify-between mt-6 mb-6 gap-2">
-              <div className="flex items-center gap-2">
-                <Checkbox />
-                <p className="text-sm text-blue-ct7 font-medium sm:text-xs">Remember me</p>
+      <div className="login w-full h-screen flex justify-center items-center bg-slate-200 p-5 xs:pt-4 xs:pb-4">
+        <Loading isLoading={isMutating} />
+        <div className="form-Login flex justify-center items-center w-96 shadow-shadow1 bg-white rounded-lg p-6 sm:w-11/12 xs:w-full">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
+              <div className="head-form mt-">
+                <Image src={logo} alt="logo" className="m-auto" />
+                <h3 className="text-center text-blue-ct6 font-bold text-4xl mb-2 mt-4 sm:text-3xl xs:text-2xl">Login</h3>
               </div>
-              <p className="text-sm text-blue-ct7 font-medium duration-500 cursor-pointer hover:text-green-ct5 xs:text-xs">Forgot password ?</p>
-            </div>
-            <div className="flex justify-end">
-              <Button className=" px-16 py-3 mt-4 w-full xs:text-xs" type="submit">
-                LOGIN
-              </Button>
-            </div>
-            <Link className="text-xs text-end block mt-3 text-blue-ct6 hover:text-blue-ct5 font-medium" href="/register">
-              Not registered? Create an account
-            </Link>
-          </form>
-        </Form>
+              {formFields.map(({ name, placeholder, type }) => (
+                <FormField
+                  key={name}
+                  control={form.control}
+                  name={name}
+                  render={({ field }) => (
+                    <FormItem>
+                      <InputForm
+                        types="success"
+                        fullWidth
+                        className="rounded-3xl bg-slate-100 border-0 mt-6 text-sm xs:text-xs"
+                        placeholder={placeholder}
+                        type={type || "text"}
+                        {...field}
+                      />
+                      {(errors && name === "email") || (errors && name === "password") ? (
+                        <FormMessage className="xs:text-xs">{errors}</FormMessage>
+                      ) : (
+                        <FormMessage className="xs:text-xs" />
+                      )}
+                    </FormItem>
+                  )}
+                />
+              ))}
+
+              <div className="checkbox flex items-center justify-between mt-6 mb-6 gap-2">
+                <div className="flex items-center gap-2">
+                  <Checkbox />
+                  <p className="text-sm text-blue-ct7 font-medium sm:text-xs">Remember me</p>
+                </div>
+                <p className="text-sm text-blue-ct7 font-medium duration-500 cursor-pointer hover:text-green-ct5 xs:text-xs">Forgot password ?</p>
+              </div>
+              <div className="flex justify-end">
+                <Button className=" px-16 py-3 mt-4 w-full xs:text-xs" type="submit">
+                  LOGIN
+                </Button>
+              </div>
+              <Link className="text-xs text-end block mt-3 text-blue-ct6 hover:text-blue-ct5 font-medium" href="/register">
+                Not registered? Create an account
+              </Link>
+            </form>
+          </Form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

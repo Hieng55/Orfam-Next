@@ -1,12 +1,23 @@
 import React from "react";
 import PrivateLayout from "@/components/layouts/privateLayout";
 import CheckoutInfo from "@/components/features/checkout";
+import Head from "next/head";
 
 const Checkout = () => {
   return (
-    <div className="Checkout">
-      <CheckoutInfo />
-    </div>
+    <>
+      <Head>
+        <title>Checkout</title>
+        <meta
+          property="og:description"
+          content="Complete the purchase and payment process easily on our website. Guaranteed safety and convenience. Shopping for fresh vegetables has never been easier!"
+        />
+      </Head>
+
+      <div className="Checkout">
+        <CheckoutInfo />
+      </div>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 
 import type { ReactElement } from "react";
@@ -7,19 +8,22 @@ import PublicLayout from "@/components/layouts/publicLayout";
 import Banner from "@/components/features/home/banner";
 import Introduce from "@/components/features/home/introduce";
 import TabsProducts from "@/components/features/home/tabsProducts";
+
 import AboutUs from "@/components/features/home/about";
 import SpecialProducts from "@/components/features/home/sliderProducts";
 import BlogPost from "@/components/features/home/blogPost";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Web selling food",
-  description: "Created by Hien dev",
-};
 
 const Home = () => {
   return (
     <>
+      <Head>
+        <title>Orfarm - Grocery & Food Store E-commerce.</title>
+        <meta
+          property="og:description"
+          content="Home page specializing in selling vegetables - Shop for fresh, quality vegetables from the farm to your table. Explore now!"
+        />
+        <meta property="og:image" content="https://orfarm-next-js.vercel.app/assets/img/banner/about-bg-1.png" />
+      </Head>
       <ToastContainer />
       <Banner />
       <Introduce />

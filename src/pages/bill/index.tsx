@@ -13,6 +13,7 @@ import type { TOrder } from "@/components/features/checkout/type";
 
 import checkSuccess from "@/image/icon/check.svg";
 import isDefined from "@/utils/isDefine";
+import Head from "next/head";
 
 const Bill = () => {
   const router = useRouter();
@@ -26,6 +27,14 @@ const Bill = () => {
 
   return (
     <>
+      <Head>
+        <title>Orfarm - Invoice.</title>
+        <meta
+          property="og:description"
+          content="Complete the purchase and payment process easily on our website. Guaranteed safety and convenience. Shopping for fresh vegetables has never been easier!"
+        />
+      </Head>
+
       <div className="bill py-12 mt-16">
         <div className="max-w-md m-auto ">
           <div className="line-green bg-green-400 h-2 rounded-lg"></div>
