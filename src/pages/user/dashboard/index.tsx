@@ -35,6 +35,7 @@ const DashboardUser = () => {
     if (router.pathname === "/user") {
       router.push(dashboardUser[0].link);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

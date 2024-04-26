@@ -73,6 +73,7 @@ const Account = () => {
         address: profile.data.address ? profile.data.address : "",
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [profile]);
 
   return (

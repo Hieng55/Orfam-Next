@@ -49,6 +49,7 @@ const DashboardAdmin = () => {
     if (router.pathname === "/admin") {
       router.push(menuItems[0].route);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

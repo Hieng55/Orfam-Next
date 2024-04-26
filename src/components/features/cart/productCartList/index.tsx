@@ -75,7 +75,6 @@ const ProductCartList = () => {
         type: "success",
       });
     }
-    
 
     if (discount && discount.length === 0) {
       showToast({
@@ -103,6 +102,7 @@ const ProductCartList = () => {
       setTotalPrice(totalPriceDiscount);
       setTotal(totalPrice);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [carts, discount]);
 
   return (

@@ -10,6 +10,12 @@ import TabsProducts from "@/components/features/home/tabsProducts";
 import AboutUs from "@/components/features/home/about";
 import SpecialProducts from "@/components/features/home/sliderProducts";
 import BlogPost from "@/components/features/home/blogPost";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Web selling food",
+  description: "Created by Hien dev",
+};
 
 const Home = () => {
   return (

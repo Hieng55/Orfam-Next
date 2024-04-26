@@ -31,6 +31,7 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
       setCheckRole(false);
       router.push("/");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!shouldRender || !checkRole) {

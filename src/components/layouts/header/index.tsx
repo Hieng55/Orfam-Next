@@ -81,6 +81,7 @@ export const Header = () => {
   useEffect(() => {
     const token = getInfo("KEY_TOKEN") as TToken;
     setToken(token);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

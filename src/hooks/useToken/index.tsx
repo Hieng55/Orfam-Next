@@ -8,6 +8,7 @@ const useToken = () => {
   useEffect(() => {
     const token = getInfo("KEY_TOKEN") as TToken;
     setTokenInfo(token);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return tokenInfo;
 };

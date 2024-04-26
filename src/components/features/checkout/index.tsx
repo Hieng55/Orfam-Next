@@ -96,6 +96,7 @@ const CheckoutInfo = () => {
         address: profile.data.address,
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [carts, selectedOption.price, profile]);
 
   useEffect(() => {
@@ -107,6 +108,7 @@ const CheckoutInfo = () => {
         setTotalPrice(total);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [carts]);
 
   useLeavePageConfirm({ isConfirm: discount || form, message: "If you leave or reload your data will be lost" });
