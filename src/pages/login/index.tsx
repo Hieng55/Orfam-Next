@@ -69,6 +69,9 @@ const Login = () => {
           property="og:description"
           content="Explore our store to find the freshest and most diverse vegetable products. We are committed to providing the best quality for your dining table!"
         />
+        <meta name="facebook:image:type" content="image/png" />
+        <meta name="instagram:image:type" content="image/png" />
+        <meta name="linked:image:type" content="image/png" />
       </Head>
 
       <div className="login w-full h-screen flex justify-center items-center bg-slate-200 p-5 xs:pt-4 xs:pb-4">

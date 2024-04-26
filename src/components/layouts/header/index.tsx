@@ -31,6 +31,7 @@ import homeIcon from "@/image/icon/home.png";
 import barsIcon from "@/image/icon/bars-3.png";
 import cartIcon from "@/image/icon/cart.png";
 import userIcon from "@/image/icon/user.png";
+import { Login } from "@/icons/feature/LogIn";
 
 export const Header = () => {
   const router = useRouter();
@@ -288,12 +289,10 @@ export const Header = () => {
                     removeInfo("ROLE");
                     router.push("/login");
                   }}
-                  className={`flex text-sm items-center  mt-10 gap-4 rounded-lg hover:bg-green-ct7 hover:text-white px-4 py-3 font-medium text-gray-300 cursor-pointer`}
+                  className={`flex text-sm items-center  mt-10 gap-4 rounded-lg hover:bg-green-ct5 hover:text-white px-4 py-3 font-medium text-gray-300 cursor-pointer`}
                 >
-                  <span>
-                    <Logout className="w-6 h-6" />
-                  </span>
-                  <span>Logout</span>
+                  <span>{token ? <Logout className="w-6 h-6" /> : <Login className="w-6 h-6" />}</span>
+                  {token ? "Logout" : "login"}
                 </li>
               </ul>
             </div>

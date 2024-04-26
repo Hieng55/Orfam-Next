@@ -89,6 +89,9 @@ const Register = () => {
           property="og:description"
           content="Explore our store to find the freshest and most diverse vegetable products. We are committed to providing the best quality for your dining table!"
         />
+        <meta name="facebook:image:type" content="image/png" />
+        <meta name="instagram:image:type" content="image/png" />
+        <meta name="linked:image:type" content="image/png" />
       </Head>
 
       <div className="overflow-y-auto w-screen h-screen py-4 bg-slate-200 ">

@@ -16,8 +16,11 @@ function NotFound() {
     <>
       <Head>
         <title>404 - Orfarm.</title>
+        <meta name="facebook:image:type" content="image/png" />
+        <meta name="instagram:image:type" content="image/png" />
+        <meta name="linked:image:type" content="image/png" />
       </Head>
-      
+
       <div className="h-screen bg-green-ct7 p-4">
         <div className={`h-full w-full flex justify-center items-center ${quicksand.className}`}>
           <div>

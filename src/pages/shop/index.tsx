@@ -15,6 +15,9 @@ const Shop = () => {
           property="og:description"
           content="Explore our store to find the freshest and most diverse vegetable products. We are committed to providing the best quality for your dining table!"
         />
+        <meta name="facebook:image:type" content="image/png" />
+        <meta name="instagram:image:type" content="image/png" />
+        <meta name="linked:image:type" content="image/png" />
       </Head>
 
       <div className="shop mt-14 py-20 px-10 flex gap-5 relative xl:px-5 lg:block">

@@ -77,8 +77,11 @@ const Contact = () => {
       <Head>
         <title>Contact - Orfarm</title>
         <meta property="og:description" content="Contact us for more information or support. We are always willing to listen and help you!" />
+        <meta name="facebook:image:type" content="image/png" />
+        <meta name="instagram:image:type" content="image/png" />
+        <meta name="linked:image:type" content="image/png" />
       </Head>
-      
+
       <div className="contact mt-20 pt-10">
         <ToastContainer />
         <div className="contact-heading text-center">

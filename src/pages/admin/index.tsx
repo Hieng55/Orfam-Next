@@ -10,6 +10,9 @@ const Admin = ({ children }: { children: React.ReactNode }) => {
     <>
       <Head>
         <title>Welcome Admin - Orfarm</title>
+        <meta name="facebook:image:type" content="image/png" />
+        <meta name="instagram:image:type" content="image/png" />
+        <meta name="linked:image:type" content="image/png" />
       </Head>
       <div className="flex px-2 ">
         <ToastContainer />

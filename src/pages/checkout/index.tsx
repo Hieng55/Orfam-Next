@@ -12,6 +12,9 @@ const Checkout = () => {
           property="og:description"
           content="Complete the purchase and payment process easily on our website. Guaranteed safety and convenience. Shopping for fresh vegetables has never been easier!"
         />
+        <meta name="facebook:image:type" content="image/png" />
+        <meta name="instagram:image:type" content="image/png" />
+        <meta name="linked:image:type" content="image/png" />
       </Head>
 
       <div className="Checkout">

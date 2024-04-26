@@ -14,8 +14,11 @@ const Blog = () => {
           property="og:description"
           content="Discover the latest and useful articles about fresh vegetables, health and nutrition on our blog. Share knowledge and experience better health!"
         />
+        <meta name="facebook:image:type" content="image/png" />
+        <meta name="instagram:image:type" content="image/png" />
+        <meta name="linked:image:type" content="image/png" />
       </Head>
-      
+
       <div className="blog mt-20">
         <ToastContainer />
         <BlogContainer />

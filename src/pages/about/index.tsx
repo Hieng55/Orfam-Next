@@ -16,6 +16,9 @@ const About = () => {
           property="og:description"
           content="Learn about us and our commitment to quality and service. We accompany you in bringing the freshest vegetable products from your garden to your dining table."
         />
+        <meta name="facebook:image:type" content="image/png" />
+        <meta name="instagram:image:type" content="image/png" />
+        <meta name="linked:image:type" content="image/png" />
       </Head>
       <div className="about mt-8 pb-16">
         <BannerAbout />
