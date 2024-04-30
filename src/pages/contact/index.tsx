@@ -77,9 +77,9 @@ const Contact = () => {
       <Head>
         <title>Contact - Orfarm</title>
         <meta property="og:description" content="Contact us for more information or support. We are always willing to listen and help you!" />
-        <meta name="facebook:image:type" content="image/png" />
-        <meta name="instagram:image:type" content="image/png" />
-        <meta name="linked:image:type" content="image/png" />
+        <meta property="og:image" content="https://hieng55.github.io/OpenGraphImage/contact.png" />
+        <meta property="og:url" content="https://orfam.vercel.app/contact" />
+        <meta property="og:type" content="website" />
       </Head>
 
       <div className="contact mt-20 pt-10">

@@ -14,9 +14,9 @@ const Blog = () => {
           property="og:description"
           content="Discover the latest and useful articles about fresh vegetables, health and nutrition on our blog. Share knowledge and experience better health!"
         />
-        <meta name="facebook:image:type" content="image/png" />
-        <meta name="instagram:image:type" content="image/png" />
-        <meta name="linked:image:type" content="image/png" />
+        <meta property="og:image" content="https://hieng55.github.io/OpenGraphImage/blog.png" />
+        <meta property="og:url" content="https://orfam.vercel.app/blog" />
+        <meta property="og:type" content="website" />
       </Head>
 
       <div className="blog mt-20">

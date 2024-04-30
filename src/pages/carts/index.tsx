@@ -14,9 +14,9 @@ const CartListProducts = () => {
           property="og:description"
           content="Check out your cart and proceed to checkout easily on our website. Choose from a variety of fresh vegetables and complete your shopping at your convenience"
         />
-        <meta name="facebook:image:type" content="image/png" />
-        <meta name="instagram:image:type" content="image/png" />
-        <meta name="linked:image:type" content="image/png" />
+        <meta property="og:image" content="	https://orfarm-next-js.vercel.app/_next/image?url=…t%2Fstatic%2Fmedia%2Flogo.fdc3a4fd.png&w=128&q=75" />
+        <meta property="og:url" content="https://orfam.vercel.app/carts" />
+        <meta property="og:type" content="website" />
       </Head>
 
       <div className="cart-list-products">

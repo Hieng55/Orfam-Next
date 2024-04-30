@@ -33,9 +33,9 @@ const Bill = () => {
           property="og:description"
           content="Complete the purchase and payment process easily on our website. Guaranteed safety and convenience. Shopping for fresh vegetables has never been easier!"
         />
-        <meta name="facebook:image:type" content="image/png" />
-        <meta name="instagram:image:type" content="image/png" />
-        <meta name="linked:image:type" content="image/png" />
+        <meta property="og:image" content="	https://orfarm-next-js.vercel.app/_next/image?url=…t%2Fstatic%2Fmedia%2Flogo.fdc3a4fd.png&w=128&q=75" />
+        <meta property="og:url" content="https://orfam.vercel.app/bill" />
+        <meta property="og:type" content="website" />
       </Head>
 
       <div className="bill py-12 mt-16">
