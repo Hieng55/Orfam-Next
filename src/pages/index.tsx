@@ -13,8 +13,6 @@ import AboutUs from "@/components/features/home/about";
 import SpecialProducts from "@/components/features/home/sliderProducts";
 import BlogPost from "@/components/features/home/blogPost";
 
-import graph from "@/image/graph/homeGraph.png";
-
 const Home = () => {
   return (
     <>
@@ -24,8 +22,8 @@ const Home = () => {
           property="og:description"
           content="Home page specializing in selling vegetables - Shop for fresh, quality vegetables from the farm to your table. Explore now!"
         />
-        <meta property="og:url" content={`${graph}`} />
-        <meta property="og:image" content={`${graph}`} />
+        <meta property="og:image" content="https://orfarm-next-js.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fheader%2Fhome5-1.jpg&w=256&q=75" />
+        <meta property="og:url" content="https://orfam.vercel.app/" />
       </Head>
       <ToastContainer />
       <Banner />
