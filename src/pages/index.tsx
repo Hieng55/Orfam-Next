@@ -23,7 +23,8 @@ const Home = () => {
           content="Home page specializing in selling vegetables - Shop for fresh, quality vegetables from the farm to your table. Explore now!"
         />
         <meta property="og:image" content="https://orfarm-next-js.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fheader%2Fhome5-1.jpg&w=256&q=75" />
-        <meta property="og:url" content="https://orfam.vercel.app/" />
+        <meta property="og:url" content="https://orfam.vercel.app" />
+        <meta property="og:type" content="website" />
       </Head>
       <ToastContainer />
       <Banner />
