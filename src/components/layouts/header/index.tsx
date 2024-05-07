@@ -300,7 +300,7 @@ export const Header = () => {
                   </li>
                 ))}
                 <li className="border-t-1 border-white"></li>
-                {token && ROLES.ADMIN && (
+                {token && ROLES.ADMIN === token.role && (
                   <li
                     onClick={() => {
                       router.push("/admin");
