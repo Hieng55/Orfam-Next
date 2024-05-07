@@ -17,7 +17,7 @@ const Dropdown = forwardRef<HTMLDivElement, Props>(({ children, className, optio
     <div>
       <Listbox value={selectedOption} onChange={setSelectedOption}>
         <Listbox.Button className="text-sm font-semibold text-blue-ct7 hover:text-green-ct5">{children}</Listbox.Button>
-        <Listbox.Options className={cn("bg-white w-48 shadow-lg z-50 sm:left-0", className)}>
+        <Listbox.Options className={cn("bg-white w-48 shadow-lg z-50", className)}>
           {options.map((option) => (
             <Listbox.Option
               className={`hover:bg-green-ct5 hover:text-white cursor-pointer text-center text-blue-ct7 text-sm p-3 ${

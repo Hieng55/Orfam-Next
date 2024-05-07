@@ -71,7 +71,7 @@ const AboutVideo = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-[700px] h-96 p-3 xs:px-3 absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 overflow-hidden rounded bg-white text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-[700px] csm:w-[520px] csm:h-72 xss:!w-[310px] xss:!h-48 h-96 p-3 xs:px-3 absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 overflow-hidden rounded bg-white text-left align-middle shadow-xl transition-all">
                   <iframe className="w-full h-full" src="https://www.youtube.com/embed/04z02TNjio0" allowFullScreen></iframe>
                 </Dialog.Panel>
               </Transition.Child>

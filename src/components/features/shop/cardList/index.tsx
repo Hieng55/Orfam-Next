@@ -37,8 +37,7 @@ const CardList = () => {
     brandsId: productBrandId,
     rate: productRate,
   });
-
-
+  console.log(products);
 
   useEffect(() => {
     setPage(initialPage);
@@ -78,7 +77,7 @@ const CardList = () => {
         </div>
         <div className="flex flex-wrap gap-4 mt-5 justify-center">
           {isLoading && <Loading types="primary" size="md" containerClassName="h-[500px]" />}
-          {isDefined(products) &&
+          {isDefined(products) && products.data.length > 0 ? (
             products.data.map((product) => (
               <CardProduct
                 key={product.id}
@@ -91,7 +90,10 @@ const CardList = () => {
                 rating={product.rate}
                 className="w-60"
               />
-            ))}
+            ))
+          ) : (
+            <h4 className="text-center text-lg text-blue-ct7">No product</h4>
+          )}
         </div>
         <div className="pagination flex justify-center gap-2 mt-12">
           {isDefined(totalPages) &&
