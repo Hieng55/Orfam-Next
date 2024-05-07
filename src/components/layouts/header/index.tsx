@@ -222,7 +222,7 @@ export const Header = () => {
                   router.push("/login");
                 }}
               >
-                Login
+                LOGIN
               </li>
             </ul>
           )}
