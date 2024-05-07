@@ -17,12 +17,18 @@ const Header = () => {
   return (
     <>
       <nav className="p-5 flex items-center gap-10 shadow-shadow2 mb-3 bg-white justify-between">
-        <Image src={logo} alt="" />
+        <Image
+          src={logo}
+          alt=""
+          onClick={() => {
+            router.push("/");
+          }}
+        />
         <div className="flex gap-3 items-center">
           <span className="font-semibold text-blue-ct5"></span>
 
-          <Dropdown className="absolute right-9 top-20" options={options}>
-            <button className="rounded-full relative px-3 py-3 bg-red-200 md:hidden">
+          <Dropdown className="absolute right-9 top-20 sm" options={options}>
+            <button className="rounded-full relative px-3 py-3 bg-red-200 ">
               <User className="w-5 h-5 text-blue-ct7" />
             </button>
           </Dropdown>

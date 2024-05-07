@@ -7,8 +7,11 @@ import banner from "@/image/banner/slider-bg-4.webp";
 import leafFirst from "@/image/banner-remove-bg/slider-shape-1.webp";
 import leafSecond from "@/image/banner-remove-bg/slider-shape-2.webp";
 import leafThird from "@/image/banner-remove-bg/slider-shape-3.webp";
+import { useRouter } from "next/router";
 
 const Banner = () => {
+  const router = useRouter();
+
   return (
     <div className="banner mt-20 bg-[url('https://orfarm-next-js.vercel.app/assets/img/slider/shape-bg-2.jpg')] pl-4 px-10 pt-24 h-screen relative group mb-7 bg-center md:mt-4">
       <div className="flex items-center justify-between md:block ">
@@ -21,6 +24,9 @@ const Banner = () => {
             Presentation matters. Our fresh Vietnamese vegetable rolls <br /> look good and taste even better
           </p>
           <Button
+            onClick={() => {
+              router.push("/shop");
+            }}
             types="success"
             className="px-12 py-4 xl:px-10 xl:py-3 nm:px-8 nm:py-3 nm:text-xs rounded-full hover:opacity-100 font-medium duration-500 hover:bg-blue-ct7"
           >

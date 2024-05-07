@@ -61,6 +61,7 @@ const FilterProduct = () => {
     storeActions.setProductCategoryId(null);
     storeActions.setProductBrandId(null);
     storeActions.setProductRate(null);
+    storeActions.setSearchValue("");
   };
 
   return (

@@ -20,7 +20,6 @@ import { Order } from "@/icons/feature/Order";
 import { Home } from "@/icons/feature/Home";
 import { Shop } from "@/icons/feature/Shop";
 import { About } from "@/icons/feature/About";
-import Contact from "@/icons/feature/Contact";
 import Top from "@/icons/feature/Top";
 
 import isDefined from "@/utils/isDefine";
@@ -32,10 +31,12 @@ import barsIcon from "@/image/icon/bars-3.png";
 import cartIcon from "@/image/icon/cart.png";
 import userIcon from "@/image/icon/user.png";
 import { Login } from "@/icons/feature/LogIn";
+import { Phone } from "@/icons/feature/Phone";
 
 export const Header = () => {
   const router = useRouter();
   const [isFixed, setIsFixed] = useState(false);
+  const userRef = useRef<HTMLButtonElement | null>(null);
   const [isOpenModalSearch, setIsOpenModalSearch] = useState<boolean>(false);
   const [isOpenModalBars, setIsOpenModalBars] = useState<boolean>(false);
   const { removeInfo, getInfo } = authLocal;
@@ -67,7 +68,7 @@ export const Header = () => {
     {
       text: "Contact",
       route: "/contact",
-      icon: <Contact className="w-6 h-6 -mt-2" />,
+      icon: <Phone className="w-6 h-6 -mt-2" />,
     },
   ];
 
@@ -98,6 +99,20 @@ export const Header = () => {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (userRef.current && !userRef.current.contains(event.target as Node)) {
+        setIsOpenUser(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
@@ -145,8 +160,10 @@ export const Header = () => {
             <Search className="w-5 h-5 text-blue-ct7" />
           </Button>
           <Button
-            onClick={() => {
+            ref={userRef}
+            onClick={(e) => {
               setIsOpenUser(!isOpenUser);
+              e.stopPropagation();
             }}
             types="error"
             className="rounded-full px-3 py-3 bg-red-200 md:hidden"
@@ -283,16 +300,34 @@ export const Header = () => {
                   </li>
                 ))}
                 <li className="border-t-1 border-white"></li>
+                {token && ROLES.ADMIN && (
+                  <li
+                    onClick={() => {
+                      router.push("/admin");
+                    }}
+                    className="flex px-4 py-3 gap-4 text-white hover:bg-green-ct5 rounded-lg text-sm font-medium"
+                  >
+                    <User className="w-6 h-6" /> <span>Admin</span>
+                  </li>
+                )}
                 <li
                   onClick={() => {
                     removeInfo("KEY_TOKEN");
                     removeInfo("ROLE");
                     router.push("/login");
                   }}
-                  className={`flex text-sm items-center  mt-10 gap-4 rounded-lg hover:bg-green-ct5 hover:text-white px-4 py-3 font-medium text-gray-300 cursor-pointer`}
+                  className={`flex text-sm items-center mt-2 gap-4 rounded-lg hover:bg-green-ct5 hover:text-white px-4 py-3 font-medium text-gray-300 cursor-pointer`}
                 >
                   <span>{token ? <Logout className="w-6 h-6" /> : <Login className="w-6 h-6" />}</span>
                   {token ? "Logout" : "login"}
+                </li>
+                <li
+                  onClick={() => {
+                    setIsOpenModalBars(false);
+                  }}
+                  className="bg-red-600 cursor-pointer text-white py-3 rounded-lg -mt-5 text-sm hover:bg-red-500"
+                >
+                  Cancel
                 </li>
               </ul>
             </div>
@@ -307,7 +342,7 @@ export const Header = () => {
             behavior: "smooth",
           });
         }}
-        className={`fixed bottom-3 right-3 bg-green-ct6 px-3 py-3 rounded-full z-50 animate-scrollTop ${
+        className={`fixed bottom-3 right-3 bg-green-ct6 px-3 py-3 rounded-full z-50 animate-scrollTop md:bottom-24 md:px-2 md:py-2 ${
           !isFixed && "!animate-scrollBottom opacity-0"
         }`}
       >
