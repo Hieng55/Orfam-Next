@@ -1,0 +1,7 @@
+TÀI KHOẢN ADMIN 
+email: bosshieng55@gmail.com
+password: 123456
+
+TÀI KHOẢN CUSTORMER
+email: customerPro@gmail.com
+password: 123456
