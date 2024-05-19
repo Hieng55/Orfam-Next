@@ -113,7 +113,9 @@ const Login = () => {
                   <Checkbox />
                   <p className="text-sm text-blue-ct7 font-medium sm:text-xs">Remember me</p>
                 </div>
-                <p className="text-sm text-blue-ct7 font-medium duration-500 cursor-pointer hover:text-green-ct5 xs:text-xs">Forgot password ?</p>
+                <Link href="/verification" className="text-sm text-blue-ct7 font-medium duration-500 cursor-pointer hover:text-green-ct5 xs:text-xs">
+                  Forgot password ?
+                </Link>
               </div>
               <div className="flex justify-end">
                 <Button className=" px-16 py-3 mt-4 w-full xs:text-xs" type="submit">

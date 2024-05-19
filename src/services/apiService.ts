@@ -113,7 +113,7 @@ export default class RestClient {
         } else if (errorCode === statusCode.FORBIDDEN) {
           window.location.replace("/");
         } else if (errorCode === statusCode.NOT_FOUND) {
-          window.location.replace("/404");
+          // window.location.replace("/404");
         } else if (errorCode === statusCode.BAD_REQUEST) {
           removeInfo("KEY_TOKEN");
           removeInfo("ROLE");

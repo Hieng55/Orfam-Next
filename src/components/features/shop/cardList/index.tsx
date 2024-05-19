@@ -37,7 +37,6 @@ const CardList = () => {
     brandsId: productBrandId,
     rate: productRate,
   });
-  console.log(products);
 
   useEffect(() => {
     setPage(initialPage);

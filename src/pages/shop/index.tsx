@@ -15,7 +15,7 @@ const Shop = () => {
           property="og:description"
           content="Explore our store to find the freshest and most diverse vegetable products. We are committed to providing the best quality for your dining table!"
         />
-     <meta property="og:image" content="https://hieng55.github.io/OpenGraphImage/shop.png" />
+        <meta property="og:image" content="https://hieng55.github.io/OpenGraphImage/shop.png" />
         <meta property="og:url" content="https://orfam.vercel.app/shop" />
         <meta property="og:type" content="website" />
       </Head>

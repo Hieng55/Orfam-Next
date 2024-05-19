@@ -114,6 +114,10 @@ const config = {
           "0%": { transform: "translateY(0)", opacity: " 1" },
           "100%": { transform: "translateY(-400px)", opacity: " 0" },
         },
+        scrollCenter: {
+          "0%": { transform: "translateX(-500px)", opacity: "0" },
+          "100%": { transform: "translateX(0px)", opacity: " 1" },
+        },
         wiggle: {
           "0%, 100%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" },
@@ -125,6 +129,7 @@ const config = {
         scroll: "scroll 1s ease-in-out",
         scrollTop: "scrollTop 0.5s ease-in-out",
         scrollBottom: "scrollBottom 0.5s ease-in-out",
+        scrollCenter: "scrollCenter 0.5s",
         wiggle: "wiggle 1s ease-in-out infinite",
       },
       backgroundImage: {
