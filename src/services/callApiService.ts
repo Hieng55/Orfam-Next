@@ -1,4 +1,5 @@
 import RestClient from "./apiService";
+import { ApiResponseProductBrandAndCategory } from "./type";
 
 const restClient = new RestClient();
 const fetcherPost = async (url: string, { arg }: { arg: {} }) => {
@@ -52,4 +53,43 @@ const fetcherGet = async <T>(url: string, query?: object): Promise<T> => {
   }
 };
 
-export { fetcherPost, fetcherGet, fetcherPatch, fetcherPut, fetcherDelete };
+const sendEmail = async ({
+  token,
+  info,
+}: {
+  token: string;
+  info: {
+    email: string;
+    name: string;
+    subject: string;
+    orders?: ApiResponseProductBrandAndCategory[];
+  };
+}) => {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/sendMail`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ email: info.email, name: info.name, subject: info.subject, orders: info?.orders }),
+    });
+  } catch (error) {
+    console.error("Error sending email:", error);
+  }
+};
+
+const sendVerification = async ({ link, data }: { link: string; data: object }) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/${link}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  const resStatus = res.ok;
+
+  return resStatus;
+};
+
+export { fetcherPost, fetcherGet, fetcherPatch, fetcherPut, fetcherDelete, sendEmail, sendVerification };

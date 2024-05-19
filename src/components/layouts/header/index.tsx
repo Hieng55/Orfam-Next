@@ -235,13 +235,13 @@ export const Header = () => {
         </div>
       </nav>
       {!router.pathname.startsWith("/admin") && (
-        <nav className="nav fixed bottom-10 left-2/4 -translate-x-2/4 hidden shadow-shadow1 z-40 bg-white w-11/12 rounded-[30px] m-auto md:block ">
-          <ul className="flex justify-between px-10 xs:px-5 xs:py-1">
+        <nav className="nav fixed bottom-0 left-2/4 -translate-x-2/4 hidden shadow-shadow1 z-40 bg-white w-full m-auto md:block">
+          <ul className="flex p-1 justify-between xs:px-5 xs:py-1">
             <li
               onClick={() => {
                 router.push("/");
               }}
-              className="cursor-pointer"
+              className="cursor-pointer w-full flex justify-center"
             >
               <Image className="w-12 h-12" src={homeIcon} alt="" />
             </li>
@@ -249,7 +249,7 @@ export const Header = () => {
               onClick={() => {
                 setIsOpenModalBars(true);
               }}
-              className="cursor-pointer"
+              className="cursor-pointer w-full flex justify-center"
             >
               <Image className="w-12 h-12" src={barsIcon} alt="" />
             </li>
@@ -257,10 +257,10 @@ export const Header = () => {
               onClick={() => {
                 router.push("/carts");
               }}
-              className="cursor-pointer relative"
+              className="cursor-pointer w-full flex justify-center relative"
             >
               <Image className="w-12 h-12" src={cartIcon} alt="" />
-              <span className="absolute -right-1 top-1 text-white bg-[#ff0000] w-4 h-4 flex justify-center items-center rounded-full text-xs font-semibold bg-">
+              <span className="absolute right-[25%] top-1 text-white bg-[#ff0000] w-4 h-4 flex justify-center items-center rounded-full text-xs font-semibold bg-">
                 {carts.length}
               </span>
             </li>
@@ -268,7 +268,7 @@ export const Header = () => {
               onClick={() => {
                 router.push("/user");
               }}
-              className="cursor-pointer"
+              className="cursor-pointer w-full flex justify-center"
             >
               <Image className="w-12 h-12" src={userIcon} alt="" />
             </li>

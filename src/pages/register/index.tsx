@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import ReactDOMServer from "react-dom/server";
 import Image from "next/image";
 import Link from "next/link";
 import { z } from "zod";
@@ -18,7 +19,7 @@ import Checkbox from "@/shared/checkbox";
 import { Button } from "@/shared/button";
 import { TFormRegister } from "@/shared/form/type";
 
-import { fetcherPost } from "@/services/callApiService";
+import { fetcherPost, sendEmail } from "@/services/callApiService";
 import authLocal from "@/utils/localStorage";
 
 import logo from "@/image/logo/Logo.png";
@@ -68,9 +69,17 @@ const Register = () => {
     if (token && token.access_token) {
       setInfo(token, "KEY_TOKEN");
       addUserCarts({ name: registerData.name });
+      sendEmail({
+        token: token.access_token,
+        info: {
+          email: registerData.email,
+          name: registerData.name,
+          subject: "Sign Up Success",
+        },
+      });
       router.push("/");
     } else {
-      setEmailErrorRegister("Email already exists");
+      setEmailErrorRegister("Email or password is wrong, please try again");
     }
   };
 

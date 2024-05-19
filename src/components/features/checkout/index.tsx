@@ -16,7 +16,7 @@ import { Form, FormField, FormItem, FormMessage } from "@/shared/form";
 import InputForm from "@/shared/input";
 import Modal from "@/shared/modal";
 
-import { fetcherPost } from "@/services/callApiService";
+import { fetcherPost, sendEmail } from "@/services/callApiService";
 
 import type { TFormBilling, TMyProfile, TOptionShip, TOrder } from "./type";
 
@@ -81,6 +81,15 @@ const CheckoutInfo = () => {
       totalPrice: totalPriceAll,
       status: TRACKING.PACKED,
       userCartsId: carts[0].userCartsId,
+    });
+    sendEmail({
+      token: tokenInfo ? tokenInfo.access_token : "",
+      info: {
+        email: profile && profile.data ? profile.data.email : "",
+        name: profile && profile.data ? profile.data.name : "",
+        subject: "Order Success",
+        orders: carts,
+      },
     });
 
     refreshOrders();
